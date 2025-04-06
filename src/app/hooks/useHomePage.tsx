@@ -1,4 +1,3 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import { getWords } from "../helper";
 
@@ -20,8 +19,7 @@ const useHomePage = () => {
   }, [guesses]);
 
   useEffect(() => {
-    const handleKeyDown = (event: any) => {
-      console.log(event.key);
+    const handleKeyDown = (event: KeyboardEvent) => {
       if (isGameOver) {
         return;
       }
@@ -53,7 +51,7 @@ const useHomePage = () => {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [current_guess, isGameOver, solution]);
+  }, [current_guess, isGameOver, solution, guesses]);
 
   useEffect(() => {
     const fetchData = async () => {

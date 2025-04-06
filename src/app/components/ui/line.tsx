@@ -1,6 +1,13 @@
 import React from 'react'
 
-const Line = ({ guess, solution, isFinal, word_length}: any) => {
+interface Props {
+    guess: string;
+    solution: string;
+    isFinal: boolean;
+    word_length: number;
+}
+
+const Line = ({ guess, solution, isFinal, word_length}: Props) => {
     const tiles = [];
 
     for (let i = 0; i < word_length; i++) {
