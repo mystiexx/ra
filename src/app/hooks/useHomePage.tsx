@@ -65,6 +65,7 @@ const useHomePage = () => {
   }, []);
 
   const handleKeyPress = (key: string) => {
+    console.log(key)
     if (isGameOver) {
       return;
     }
@@ -84,13 +85,10 @@ const useHomePage = () => {
       setCurrentGuess((prev) => prev.slice(0, -1));
       return;
     }
-
-    if (/^[a-z]$/.test(key) === false) {
-      return;
-    }
+    if (/^[A-Z]$/.test(key) === false) return;
     if (current_guess.length === word_length) {
-      return;
-    }
+        return;
+      }
     setCurrentGuess((prev) => prev + key);
   };
 

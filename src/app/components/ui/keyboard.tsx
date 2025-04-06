@@ -18,7 +18,6 @@ export const Keyboard = ({ handleKeyPress }: Props) => {
           {row.map((key) => (
             <button
               onClick={() => {
-                console.log(key)
                 handleKeyPress(key)
               }}
               key={key}

@@ -4,6 +4,7 @@ import { IoMdCloseCircle } from "react-icons/io";
 const word = "TOPSI";
 const word2 = "SHORT";
 const word3 = "SHOTS";
+const word4 = "AGAEE"; 
 const solution = "SHOTS";
 
 interface Props {
@@ -52,6 +53,13 @@ const Modal = ({ open, onClose }: Props) => {
             <Solution word={word3} solution={solution} />
           </div>
 
+          <div>
+            <p className="mb-1 text-[14px]">
+              The letter {word4} is not in the word {solution}
+            </p>
+            <Solution word={word4} solution={solution} />
+          </div>
+
           <div className="bg-[#1A2585] rounded-lg p-3 w-full mt-6">
             Wordle will be waiting with new words every day at the same time.
           </div>
@@ -80,8 +88,8 @@ const Solution = ({ word, solution }: SolutionProps) => {
                 ? "bg-[#14B077]"
                 : solution.includes(char)
                 ? "bg-[#F2940F]"
-                : "bg-[#576290]"
-            }  w-10 h-10 text-[14px] font-semibold grid place-items-center capitalize rounded-md text-white mx-1`}
+                : "bg-[#0D1947]"
+            }  w-10 h-10 text-[14px] font-semibold border-1 border-[#576290] grid place-items-center capitalize rounded-md text-white mx-1`}
           >
             {char}
           </span>
